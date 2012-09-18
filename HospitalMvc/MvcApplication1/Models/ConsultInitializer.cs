@@ -6,7 +6,7 @@ using System.Data.Entity;
 
 namespace HospitalMVC.Models
 {
-    public class ConsultInitializer : DropCreateDatabaseIfModelChanges<ConsultDbContext>
+    public class ConsultInitializer : CreateDatabaseIfNotExists<ConsultDbContext>
     {
         protected override void Seed(ConsultDbContext context)
         {
