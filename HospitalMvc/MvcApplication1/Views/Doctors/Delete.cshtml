@@ -1,0 +1,35 @@
+﻿@model HospitalMVC.Models.Doctor
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>está seguro que desea eliminar este doctor?</h3>
+<fieldset>
+    <legend>Doctor</legend>
+
+    <div class="display-label">Nombre</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">Apellido</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Apellido)
+    </div>
+
+    <div class="display-label">Especialidad</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Especialidad)
+    </div>
+
+    
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "IndexList")
+    </p>
+}

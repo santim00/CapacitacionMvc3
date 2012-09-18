@@ -1,0 +1,54 @@
+﻿@model HospitalMVC.Models.Consult
+
+@{
+    ViewBag.Title = "Details";
+}
+ 
+
+<h2>Detalles de la consulta</h2>
+
+<fieldset>
+    <legend>Consulta n° @Model.ConsultId</legend>
+   
+    
+    <div class="display-label">Nombre</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">Apellido</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Apellido)
+    </div>
+
+    <div class="display-label">Fecha</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Fecha)
+    </div>
+
+    <div class="display-label">Hora</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Hora)
+    </div>
+
+    <div class="display-label">Doctor</div>
+    <div class="display-field">
+       
+        @Html.DisplayFor(model => model.Doctor.Nombre)
+        @Html.DisplayFor(model => model.Doctor.Apellido)
+        @Html.DisplayFor(model => model.Doctor.Especialidad)
+    </div>
+
+    <div class="display-label">Precio</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Precio)
+    </div>
+
+    <div class="display-label">ObraSocial</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ObraSocial)
+    </div>
+</fieldset>
+<p>
+     @Html.ActionLink("Back to List", "IndexList")
+</p>

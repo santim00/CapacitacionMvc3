@@ -1,0 +1,88 @@
+﻿@model IEnumerable<HospitalMVC.Models.Consult>
+
+@{
+    ViewBag.Title = "Listado de consultas medicas solicitadas";
+}
+
+<h2>Lista de consultas</h2>
+
+<p>
+    @Html.ActionLink("Crear nueva consulta médica", "Create")
+</p>
+
+<h3>Filtrar consultas </h3>
+
+  <!------------ filtro por genero, con un dropdown ------------>
+   @using (Html.BeginForm()){    
+         <p>por doctor: @Html.DropDownList("doctorList", "doctores")   
+           por especialidad médica:  @Html.DropDownList("areaList", "especialidades")
+         <input type="submit" value="Filtrar" /></p> 
+        } 
+
+
+<table>
+    <tr>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Apellido
+        </th>
+        <th>
+            Fecha
+        </th>
+        <th>
+            Hora
+        </th>
+        <th>
+            Doctor
+        </th>
+        <th>
+            Especialidad
+        </th>
+        <th>
+            Precio
+        </th>
+        <th>
+            Obra Social
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hora)
+        </td>
+        <td>
+           @Html.DisplayFor(modelItem => item.Doctor.Apellido)
+            
+        </td>
+        <td>
+           @Html.DisplayFor(modelItem => item.Doctor.Especialidad)
+            
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Precio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ObraSocial)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.ConsultId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ConsultId })
+        </td>
+    </tr>
+}
+
+</table>

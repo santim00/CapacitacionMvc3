@@ -1,0 +1,53 @@
+﻿@model HospitalMVC.Models.Consult
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Está seguuuuro que desea eliminar esta consulta?</h3>
+<fieldset>
+    <legend>Consulta</legend>
+
+    <div class="display-label">Nombre</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">Apellido</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Apellido)
+    </div>
+
+    <div class="display-label">Fecha</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Fecha)
+    </div>
+
+    <div class="display-label">Hora</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Hora)
+    </div>
+
+    <div class="display-label">Doctor</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Doctor)
+    </div>
+
+    <div class="display-label">Precio</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Precio)
+    </div>
+
+    <div class="display-label">ObraSocial</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ObraSocial)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "IndexList")
+    </p>
+}

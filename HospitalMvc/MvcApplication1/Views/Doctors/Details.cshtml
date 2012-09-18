@@ -1,0 +1,31 @@
+﻿@model HospitalMVC.Models.Doctor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Datos del doctor</h2>
+
+<fieldset>
+    <legend>Doctor con matrícula @Model.Matricula</legend>
+
+    <div class="display-label">Nombre</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">Apellido</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Apellido)
+    </div>
+
+    <div class="display-label">Especialidad</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Especialidad)
+    </div>
+
+    </fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.DoctorId }) |
+    @Html.ActionLink("Back to List", "IndexList")
+</p>

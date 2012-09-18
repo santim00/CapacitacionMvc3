@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@ViewBag.Message</h2>
+
+<p>
+    @ViewBag.Intro:
+</p>
+
+<p><!-- podemos crear links para que sean manejados por otros controladores -->
+    @Html.ActionLink("ingresar una consulta clínica", "Create", new { Controller = "Consult", Action = "Create" }) | @Html.ActionLink("Lista de consultas clínicas", "IndexList", new { Controller = "Consult", Action = "IndexList" }) |  @Html.ActionLink("Listado de doctores", "IndexList", new { Controller = "Doctors", Action = "IndexList" })  
+
+
+<div id="indexImage">
+</div>
