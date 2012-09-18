@@ -33,7 +33,8 @@ namespace MvcApplication1
 
         protected void Application_Start()
         {
-            Database.SetInitializer(new ConsultInitializer());
+           
+        //    Database.SetInitializer(new ConsultInitializer());
 
             AreaRegistration.RegisterAllAreas();
 
